@@ -1,0 +1,216 @@
+body {
+  font-family: 'Lato', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+nav {
+  background-color: #111;
+  padding: 1.3rem 3.3rem;
+}
+
+/* Custom Styles */
+.navTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: darkgray;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+}
+
+.searchInput {
+  border: none;
+  background-color: transparent;
+}
+
+.searchInput::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+.searchInput:-ms-input-placeholder {
+  color: lightgray;
+}
+
+.searchInput::-ms-input-placeholder {
+  color: lightgray;
+}
+
+.searchInput::placeholder {
+  color: lightgray;
+}
+
+.limitedOffer {
+  font-size: 1.25rem;
+  border-bottom: 2px solid green;
+  cursor: pointer;
+}
+
+.navBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.menuItem {
+  margin-right: 50px;
+  cursor: pointer;
+  color: lightgray;
+  font-weight: 400;
+}
+
+.slider {
+  background: url("../img/brick-wall.jpg");
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+}
+
+.sliderWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500vw;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.sliderItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 100vw;
+  position: relative;
+}
+
+.slider .sliderBg {
+  width: 47rem;
+  height: 47rem;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.sliderImg {
+  z-index: 1;
+}
+
+.sliderTitle {
+  position: absolute;
+  top: 10%;
+  font-size: 4rem;
+  z-index: 1;
+  font-weight: 900;
+  right: 10%;
+  text-shadow: 10px 4px #530053;
+  -webkit-transition: all 1.6s ease-in-out;
+  transition: all 1.6s ease-in-out;
+}
+
+.sliderPrice {
+  position: absolute;
+  top: 10%;
+  font-size: 4rem;
+  z-index: 1;
+  font-weight: 900;
+  left: 10%;
+  font-weight: 300;
+  text-shadow: 4px 1px whitesmoke;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 50%;
+}
+
+.slider .buyButton {
+  position: absolute;
+  top: 10%;
+  font-size: 4rem;
+  z-index: 1;
+  font-weight: 900;
+  top: 50%;
+  right: 10%;
+  font-size: 2rem;
+  border: 1px solid gray;
+  background-color: black;
+  color: white;
+  z-index: 1;
+}
+
+.slider .buyButton:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.slider .sliderItem:nth-child(1) .sliderBg {
+  background-color: #369e62;
+}
+
+.slider .sliderItem:nth-child(1) .sliderPrice {
+  color: #369e62;
+}
+
+.slider .sliderItem:nth-child(2) .sliderBg {
+  background-color: rebeccapurple;
+}
+
+.slider .sliderItem:nth-child(2) .sliderPrice {
+  color: rebeccapurple;
+}
+
+.slider .sliderItem:nth-child(3) .sliderBg {
+  background-color: teal;
+}
+
+.slider .sliderItem:nth-child(3) .sliderPrice {
+  color: teal;
+}
+
+.slider .sliderItem:nth-child(4) .sliderBg {
+  background-color: cornflowerblue;
+}
+
+.slider .sliderItem:nth-child(4) .sliderPrice {
+  color: cornflowerblue;
+}
+
+.slider .sliderItem:nth-child(5) .sliderBg {
+  background-color: #7c7350;
+}
+
+.slider .sliderItem:nth-child(5) .sliderPrice {
+  color: #7c7350;
+}
+/*# sourceMappingURL=styles.css.map */

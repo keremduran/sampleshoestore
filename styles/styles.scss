@@ -1,0 +1,150 @@
+body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+nav {
+  background-color: #111;
+  padding: 1.3rem 3.3rem;
+}
+
+$sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Custom Styles */
+
+.navTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: darkgray;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+}
+
+.searchInput {
+  border: none;
+  background-color: transparent;
+}
+
+.searchInput::placeholder {
+  color: lightgray;
+}
+
+.limitedOffer {
+  font-size: 1.25rem;
+  border-bottom: 2px solid green;
+  cursor: pointer;
+}
+
+.navBottom {
+  @include center;
+}
+
+.menuItem {
+  margin-right: 50px;
+  cursor: pointer;
+  color: lightgray;
+  font-weight: 400;
+}
+
+.slider {
+  background: url('../img/brick-wall.jpg');
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  &Wrapper {
+    display: flex;
+    width: 500vw;
+    transition: all 1s ease-in-out;
+  }
+  &Item {
+    @include center;
+    width: 100vw;
+    position: relative;
+  }
+
+  .sliderBg {
+    width: 47rem;
+    height: 47rem;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  @mixin contentStyle {
+    position: absolute;
+    top: 10%;
+    font-size: 4rem;
+    z-index: 1;
+    font-weight: 900;
+  }
+
+  &Img {
+    z-index: 1;
+  }
+
+  &Title {
+    @include contentStyle;
+    right: 10%;
+    text-shadow: 10px 4px rgb(83, 0, 83);
+    transition: all 1.6s ease-in-out;
+  }
+
+  &Price {
+    @include contentStyle;
+    left: 10%;
+    font-weight: 300;
+    text-shadow: 4px 1px whitesmoke;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+  }
+
+  .buyButton {
+    @include contentStyle;
+    top: 50%;
+    right: 10%;
+    font-size: 2rem;
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+    z-index: 1;
+    &:hover {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+  }
+  @each $current-color in $sliderColors {
+    $i: index($sliderColors, $current-color);
+    .sliderItem:nth-child(#{$i}) {
+      .sliderBg {
+        background-color: $current-color;
+      }
+      .sliderPrice {
+        color: $current-color;
+      }
+    }
+  }
+}
+// .sliderWrapper {
+//   display: flex;
+//   width: 500vw;
+// }
+// .sliderItem {
+//   @include center;
+//   width: 100vw;
+// }
