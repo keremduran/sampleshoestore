@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
@@ -10,7 +14,6 @@ nav {
   background-color: #111;
   padding: 1.3rem 3.3rem;
 }
-
 $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
 
 @mixin flexCenter {
@@ -21,7 +24,8 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
 }
 
 .button {
-  padding: 0.8rem 1.2rem;
+  padding: 0.5rem;
+  margin: 0;
   background-color: black;
   color: white;
   font-weight: 500;
@@ -143,7 +147,6 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
     border: 1px solid gray;
     background-color: black;
     color: white;
-    z-index: 1;
     &:hover {
       background-color: white;
       color: black;
@@ -194,6 +197,8 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
 }
 
 .product {
+  position: relative;
+  height: 100vh;
   @include flexCenter;
   margin-top: -6rem;
   clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
@@ -232,7 +237,11 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
       background-color: blue;
     }
   }
-
+  .buyButton {
+    @extend .button;
+    float: left;
+    margin: 1rem 0;
+  }
   .sizes {
     margin-top: 0.5rem;
     div {
@@ -243,11 +252,69 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
       font-size: 1.2rem;
       border: 1px solid black;
     }
+    div.active {
+      border: 1px solid white;
+      color: white;
+      background-color: purple;
+    }
   }
 
-  .button {
+  .checkout {
+    @extend .button;
     font-weight: 600;
-    margin: 1rem;
     float: right;
+    margin: 0.5rem;
+  }
+  .payment {
+    display: none;
+    flex-direction: column;
+    box-shadow: -1px 2px 20px 25px rgba(0, 0, 0, 0.81);
+    background: white;
+    position: absolute;
+    width: 20rem;
+    margin: 15rem;
+    padding: 2rem;
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    label {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    input {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      width: 100%;
+      height: 2.5rem;
+      border: 1px solid gray;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .cardIcons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: 300;
+      img {
+        width: 3rem;
+      }
+    }
+
+    .close {
+      @include flexCenter;
+      @extend .button;
+      width: 1rem;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
   }
 }

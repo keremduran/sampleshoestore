@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
@@ -11,15 +15,16 @@ nav {
   padding: 1.3rem 3.3rem;
 }
 
-.button {
-  padding: 0.8rem 1.2rem;
+.button, .product .buyButton, .product .checkout, .product .payment .close {
+  padding: 0.5rem;
+  margin: 0;
   background-color: black;
   color: white;
   font-weight: 500;
   cursor: pointer;
 }
 
-.button:hover {
+.button:hover, .product .buyButton:hover, .product .checkout:hover, .product .payment .close:hover {
   background-color: white;
   color: black;
 }
@@ -198,7 +203,6 @@ nav {
   border: 1px solid gray;
   background-color: black;
   color: white;
-  z-index: 1;
 }
 
 .slider .buyButton:hover {
@@ -302,6 +306,8 @@ nav {
 }
 
 .product {
+  position: relative;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -354,6 +360,11 @@ nav {
   background-color: blue;
 }
 
+.product .buyButton {
+  float: left;
+  margin: 1rem 0;
+}
+
 .product .sizes {
   margin-top: 0.5rem;
 }
@@ -367,9 +378,85 @@ nav {
   border: 1px solid black;
 }
 
-.product .button {
+.product .sizes div.active {
+  border: 1px solid white;
+  color: white;
+  background-color: purple;
+}
+
+.product .checkout {
   font-weight: 600;
-  margin: 1rem;
   float: right;
+  margin: 0.5rem;
+}
+
+.product .payment {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: -1px 2px 20px 25px rgba(0, 0, 0, 0.81);
+          box-shadow: -1px 2px 20px 25px rgba(0, 0, 0, 0.81);
+  background: white;
+  position: absolute;
+  width: 20rem;
+  margin: 15rem;
+  padding: 2rem;
+}
+
+.product .payment h2 {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.product .payment label {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.product .payment input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.product .payment .cardIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.product .payment .cardIcons img {
+  width: 3rem;
+}
+
+.product .payment .close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 1rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
