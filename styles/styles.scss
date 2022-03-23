@@ -20,7 +20,17 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
   text-align: center;
 }
 
-/* Custom Styles */
+.button {
+  padding: 0.8rem 1.2rem;
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
 
 .navTop {
   display: flex;
@@ -31,14 +41,16 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
 .search {
   display: flex;
   align-items: center;
-  background-color: darkgray;
-  padding: 0.4rem 0.8rem;
+  background-color: rgb(78, 77, 77);
+  padding: 0.1rem 0.1rem;
   border-radius: 10px;
 }
 
 .searchInput {
   border: none;
   background-color: transparent;
+  padding: 0.4rem 0.8rem;
+  margin: 0.5rem;
 }
 
 .searchInput::placeholder {
@@ -60,10 +72,13 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
   cursor: pointer;
   color: lightgray;
   font-weight: 600;
+  transition: all 1.5s ease-out;
 }
 
 .menuItem.active {
   font-weight: 900;
+  transform: scale(1.3, 1.3);
+  transition: all 1s ease-out;
   box-shadow: 0 1.5rem 3px -3px purple;
 }
 
@@ -149,21 +164,19 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
 }
 
 .features {
-  margin-top: -10rem;
+  margin-top: -7rem;
   clip-path: polygon(0 0, 100% 26%, 100% 100%, 0 100%);
   @include flexCenter;
   padding: 5rem 3rem;
-  z-index: 10;
   background: white;
+  color: black;
 }
 
 .feature {
   @include flexCenter;
   flex-direction: column;
-  color: black;
   max-width: 23%;
   margin: 0.5rem;
-  background: white;
 
   &Img {
     width: 4rem;
@@ -177,5 +190,64 @@ $sliderColors: #369e62, rebeccapurple, teal, cornflowerblue, #7c7350;
   &Desc {
     color: gray;
     min-height: 5rem;
+  }
+}
+
+.product {
+  @include flexCenter;
+  margin-top: -6rem;
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+  background: whitesmoke;
+  color: black;
+  &Img {
+    width: 50%;
+  }
+  &Details {
+    text-align: left;
+  }
+
+  &Title {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+
+  &Desc {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+
+  .colors {
+    div {
+      display: inline-block;
+      margin-right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .black {
+      background-color: black;
+    }
+    .blue {
+      background-color: blue;
+    }
+  }
+
+  .sizes {
+    margin-top: 0.5rem;
+    div {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      margin-right: 0.6rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      border: 1px solid black;
+    }
+  }
+
+  .button {
+    font-weight: 600;
+    margin: 1rem;
+    float: right;
   }
 }
