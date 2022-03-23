@@ -80,24 +80,22 @@ const products = [
   },
 ];
 
-let previousIndex = 0;
 let choosenProduct = products[0];
 let choosenProductNode = document.querySelector('.product');
 
 menuItems.forEach((item, index) => {
   item.addEventListener('click', () => {
-    setActiveNavItem(index);
+    setActiveClass(menuItems, index);
     animateSlide(index);
     setProductContent(index);
-    previousIndex = index;
   });
 });
 
-const setActiveNavItem = (index) => {
-  if (previousIndex !== index) {
-    menuItems[index].classList.add('active');
-    menuItems[previousIndex].classList.remove('active');
-  }
+const setActiveClass = (items, index) => {
+  items.forEach((item, y) => {
+    item.classList.remove('active');
+  });
+  items[index].classList.add('active');
 };
 
 const animateSlide = (index) => {
@@ -110,10 +108,13 @@ const setProductContent = (index) => {
   choosenProduct = products[index];
   choosenProductNode.querySelector('.productTitle').textContent =
     choosenProduct.title;
+
   choosenProductNode.querySelector('.productPrice').textContent =
     `$` + choosenProduct.price;
+
   choosenProductNode.querySelector('.productImg').src =
     choosenProduct.colors[0].img;
+
   choosenProductNode
     .querySelector('.colors')
     .querySelectorAll('div')
@@ -124,4 +125,17 @@ const setProductContent = (index) => {
           choosenProduct.colors[index].img;
       });
     });
+
+  const sizes = choosenProductNode
+    .querySelector('.sizes')
+    .querySelectorAll('div');
+
+  sizes.forEach((size, index) => {
+    size.addEventListener('click', () => {
+      console.log('click');
+      setActiveClass(sizes, index);
+    });
+  });
 };
+
+setProductContent(0);
