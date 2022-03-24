@@ -101,7 +101,6 @@ const setActiveClass = (items, index) => {
 const animateSlide = (index) => {
   wrapper.style.transform = `translateX(${-100 * index}vw)`;
   sliderTitles[index].style.transform = `scale(1.3, 1.2)`;
-  sliderTitles[previousIndex].style.transform = `scale(1)`;
 };
 
 const setProductContent = (index) => {
@@ -114,7 +113,6 @@ const setProductContent = (index) => {
 
   choosenProductNode.querySelector('.productImg').src =
     choosenProduct.colors[0].img;
-
   choosenProductNode
     .querySelector('.colors')
     .querySelectorAll('div')
