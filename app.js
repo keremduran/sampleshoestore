@@ -139,3 +139,15 @@ const setProductContent = (index) => {
 };
 
 setProductContent(0);
+
+const buyButton = document
+  .querySelector('.product')
+  .querySelector('.buyButton');
+const payment = document.querySelector('.paymentModal');
+const closeButton = payment.querySelector('.close');
+buyButton.addEventListener('click', () => {
+  payment.style.display = 'flex';
+});
+closeButton.addEventListener('click', () => {
+  payment.style.display = 'none';
+});
